@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle fill="DODGERBLUE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="336.0" StackPane.alignment="TOP_CENTER" />
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="20.0" style="-fx-background-color: TRANSPERENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
+               <graphic>
+                  <Icon content="DASHBOARD" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px;" />
+               </graphic>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Support" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="11.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FAQ">
+               <font>
+                  <Font size="38.0" />
+               </font></Text>
+         </children>
+      </StackPane>
+   </top>
+   <bottom>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2bc56b" height="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="20.0" width="200.0">
+               <StackPane.margin>
+                  <Insets top="50.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Button ellipsisString="" graphicTextGap="0.0" minWidth="53.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #2bc56b; -fx-border-color: BLACK; -fx-border-radius: 100;" textFill="TRANSPARENT" translateX="117.0" translateY="23.0">
+               <font>
+                  <Font />
+               </font>
+            </Button>
+            <Icon content="CALL" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="97.0" scaleX="1.5" scaleY="1.5" translateX="-2.0" translateY="-3.0" StackPane.alignment="BOTTOM_RIGHT">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Icon>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hielp dit niet?" translateY="10.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bel de helpdesk" translateY="35.0" />
+         </children>
+      </StackPane>
+   </bottom>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hoe koppel ik de micro:bit aan de app?" translateY="-130.0">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="//Uitleg" translateY="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Waarom zie ik geen metingen van mijn micro:bits?" translateY="-55.0" wrappingWidth="283.38018798828125">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="//Uitleg" translateY="-10.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Waar kan ik de gegevens vinden van waterlichamen bij mij in de buurt?" translateY="40.0" wrappingWidth="263.9087829589844">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="//Uitleg" translateY="100.0" />
+         </children>
+      </StackPane>
+   </center>
+</View>
