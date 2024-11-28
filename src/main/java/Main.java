@@ -1,3 +1,4 @@
+import controllers.SceneController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,17 +7,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        System.out.println(getClass().getResource("/views/Mockup_SceneBuilder_Start.fxml"));
+    public void start(Stage primaryStage)
 
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Mockup_SceneBuilder_Start.fxml"));
-        Parent root = loader.load();
-
+    {
+        SceneController.setStage(primaryStage);
+        SceneController.sceneswitch("/main/resources/views/Mockup_SceneBuilder_Start.fxml");
 
         primaryStage.setTitle("WaterWatch Application");
-        primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        // dit is eigenlijk hoe we nu de scenes switchen maar dan ff in 1 regel door de scenecontroller
     }
 
     public static void main(String[] args) {
