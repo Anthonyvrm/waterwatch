@@ -19,7 +19,7 @@ public class SceneController {
         stage = primaryStage;
     }
 
-    // hier worden de scenes geswitched ngl ik probeerder de stacktrace te vermeiden maar copilot will heel graag dat je die foutcodes krijgt
+    // hier worden de scenes geswitched ngl ik probeerder de stacktrace te vermeiden maar copilot will heel graag dat je die foutcodes krijgt valid i guess
     public static void sceneswitch(String fxmlpath) {
         try {
             FXMLLoader loader = new FXMLLoader(SceneController.class.getResource(fxmlpath));

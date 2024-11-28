@@ -11,7 +11,7 @@ public class Main extends Application {
 
     {
         SceneController.setStage(primaryStage);
-        SceneController.sceneswitch("/main/resources/views/Mockup_SceneBuilder_Start.fxml");
+        SceneController.sceneswitch("/main/resources/views/StartScherm_Scenebuilder.fxml");
 
         primaryStage.setTitle("WaterWatch Application");
         primaryStage.show();
