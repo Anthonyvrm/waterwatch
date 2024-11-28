@@ -15,7 +15,7 @@
     </properties>
 
     <dependencies>
-        <!-- JavaFX dependencies -->
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -27,7 +27,7 @@
             <version>17.0.8</version>
         </dependency>
 
-        <!-- Gluon Charm Glisten -->
+
         <dependency>
             <groupId>com.gluonhq</groupId>
             <artifactId>charm-glisten</artifactId>
@@ -36,17 +36,17 @@
     </dependencies>
 
     <repositories>
-        <!-- Maven Central -->
+
         <repository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
-        <!-- Gluon Repository -->
+
         <repository>
             <id>gluon-releases</id>
             <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
         </repository>
-        <!-- Sonatype OSS Repository -->
+
         <repository>
             <id>oss-sonatype</id>
             <url>https://oss.sonatype.org/content/repositories/releases/</url>
@@ -55,13 +55,13 @@
 
     <build>
         <plugins>
-            <!-- Correct JavaFX Maven Plugin Version -->
+
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>Main</mainClass> <!-- Replace with your fully qualified main class -->
+                    <mainClass>Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
