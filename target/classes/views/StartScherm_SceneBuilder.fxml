@@ -28,7 +28,7 @@
       </StackPane>
    </center>
    <bottom>
-      <Button fx:id="startButton" text="Start" onAction="#goToStart" alignment="CENTER" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="250.0" prefWidth="348.0" BorderPane.alignment="CENTER">
+      <Button fx:id="startButton" onAction="#goToStart" alignment="CENTER" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="250.0" prefWidth="348.0" style="-fx-background-color: TRANSPARENT;" BorderPane.alignment="CENTER">
          <graphic>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
