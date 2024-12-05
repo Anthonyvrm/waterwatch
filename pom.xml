@@ -33,6 +33,11 @@
             <artifactId>charm-glisten</artifactId>
             <version>6.2.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>17.0.1</version>
+        </dependency>
     </dependencies>
 
     <repositories>
