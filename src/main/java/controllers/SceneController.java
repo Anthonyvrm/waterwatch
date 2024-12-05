@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -29,5 +30,8 @@ public class SceneController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void goToHome() {
+        sceneswitch("/views/Mockup_SceneBuilder_Start.fxml");
     }
 }

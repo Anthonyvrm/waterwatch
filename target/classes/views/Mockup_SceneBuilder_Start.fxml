@@ -43,12 +43,12 @@
 <?import javafx.scene.text.Text?>
 
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: BEIGE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: BEIGE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
    <top>
       <StackPane prefHeight="150.0" prefWidth="336.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle fill="DODGERBLUE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="336.0" StackPane.alignment="TOP_CENTER" />
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="20.0" style="-fx-background-color: TRANSPARENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
+            <Button onAction="#goToHome" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="20.0" style="-fx-background-color: TRANSPARENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
                <graphic>
                   <Icon content="DASHBOARD" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px; " />
                </graphic>
@@ -75,22 +75,22 @@
    <center>
       <StackPane prefHeight="533.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="349.0" style="-fx-border-width: 1; -fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Connect your Micro:Bit" StackPane.alignment="TOP_CENTER">
+            <Button onAction="#goToConnect" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="349.0" style="-fx-border-width: 1; -fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Connect your Micro:Bit" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="20.0" />
                </StackPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="345.0" style="-fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Your Micro:bit data" StackPane.alignment="TOP_CENTER">
+            <Button onAction="#goToData" mnemonicParsing="false" prefHeight="80.0" prefWidth="345.0" style="-fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Your Micro:bit data" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="130.0" />
                </StackPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="365.0" style="-fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Waterquality in your area" StackPane.alignment="TOP_CENTER">
+            <Button onAction="#goToMap" mnemonicParsing="false" prefHeight="80.0" prefWidth="365.0" style="-fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Waterquality in your area" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="240.0" />
                </StackPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="343.0" style="-fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Support" StackPane.alignment="TOP_CENTER">
+            <Button onAction="#goToSupport" mnemonicParsing="false" prefHeight="80.0" prefWidth="343.0" style="-fx-border-color: BLACK; -fx-border-style: solid none solid none; -fx-background-color: DODGERBLUE;" text="Support" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="350.0" />
                </StackPane.margin>

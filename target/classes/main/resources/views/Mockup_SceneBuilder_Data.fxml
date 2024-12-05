@@ -43,12 +43,12 @@
 <?import javafx.scene.text.Text?>
 
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DataController">
    <top>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle fill="DODGERBLUE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="336.0" StackPane.alignment="TOP_CENTER" />
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="20.0" style="-fx-background-color: TRANSPERENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
+            <Button onAction="#goToHome" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="20.0" style="-fx-background-color: TRANSPARENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
                <graphic>
                   <Icon content="DASHBOARD" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px;" />
                </graphic>
