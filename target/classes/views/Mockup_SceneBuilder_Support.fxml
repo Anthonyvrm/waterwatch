@@ -41,6 +41,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SupportController">
    <top>
@@ -49,7 +50,7 @@
             <Rectangle fill="DODGERBLUE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="336.0" StackPane.alignment="TOP_CENTER" />
             <Button onAction="#goToHome" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="55.0" style="-fx-background-color: TRANSPARENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
                <graphic>
-                  <Icon content="DASHBOARD" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px;" />
+                  <FontIcon iconLiteral="fa-home" iconSize="40" />
                </graphic>
             </Button>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Support" StackPane.alignment="TOP_CENTER">
@@ -80,11 +81,11 @@
                   <Font />
                </font>
             </Button>
-            <Icon content="CALL" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="97.0" scaleX="1.5" scaleY="1.5" translateX="-2.0" translateY="-3.0" StackPane.alignment="BOTTOM_RIGHT">
+            <FontIcon iconLiteral="fa-phone" iconSize="50">
                <StackPane.margin>
-                  <Insets />
+                  <Insets left="235" top="47"/>
                </StackPane.margin>
-            </Icon>
+            </FontIcon>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hielp dit niet?" translateY="10.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bel de helpdesk" translateY="35.0" />
          </children>

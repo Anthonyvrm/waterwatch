@@ -12,6 +12,11 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="teamdev" />
+      <option name="name" value="teamdev" />
+      <option name="url" value="https://maven.teamdev.com/repository/products" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="oss-sonatype" />
       <option name="name" value="oss-sonatype" />
       <option name="url" value="https://oss.sonatype.org/content/repositories/releases/" />
