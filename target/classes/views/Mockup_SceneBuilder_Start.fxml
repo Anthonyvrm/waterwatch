@@ -50,7 +50,7 @@
             <Rectangle fill="DODGERBLUE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="336.0" StackPane.alignment="TOP_CENTER" />
             <Button onAction="#goToHome" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="55.0" style="-fx-background-color: TRANSPARENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
                <graphic>
-                  <Icon content="ARROW_BACK" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px; " />
+                  <Icon content="CALL" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px; " />
                </graphic>
             </Button>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="START" StackPane.alignment="TOP_CENTER">

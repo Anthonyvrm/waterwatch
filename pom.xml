@@ -38,6 +38,31 @@
             <artifactId>javafx-graphics</artifactId>
             <version>17.0.1</version>
         </dependency>
+
+
+
+            <!-- Ikonli Core -->
+            <dependency>
+                <groupId>org.kordamp.ikonli</groupId>
+                <artifactId>ikonli-core</artifactId>
+                <version>12.3.1</version>
+            </dependency>
+
+            <!-- Ikonli JavaFX Support -->
+            <dependency>
+                <groupId>org.kordamp.ikonli</groupId>
+                <artifactId>ikonli-javafx</artifactId>
+                <version>12.3.1</version>
+            </dependency>
+
+            <!-- Ikonli FontAwesome Pack -->
+            <dependency>
+                <groupId>org.kordamp.ikonli</groupId>
+                <artifactId>ikonli-fontawesome-pack</artifactId>
+                <version>12.3.1</version>
+            </dependency>
+
+
     </dependencies>
 
     <repositories>
@@ -69,6 +94,6 @@
                     <mainClass>Main</mainClass>
                 </configuration>
             </plugin>
-        </plugins>
+         </plugins>
     </build>
 </project>
