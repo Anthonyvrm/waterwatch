@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Pictures/Screenshots/Screenshot%202024-11-14%20140311.png" />
+                  <Image url="@/Images/Microbit_Image.png" />
                </image>
             </ImageView>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Micro:bit" translateY="70.0">
