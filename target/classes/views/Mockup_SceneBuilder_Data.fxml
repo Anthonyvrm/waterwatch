@@ -53,7 +53,6 @@
             <Button onAction="#goToHome" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="55.0" style="-fx-background-color: TRANSPARENT;" textFill="TRANSPARENT" translateX="-140.0" translateY="-50.0">
                <graphic>
                   <FontIcon iconLiteral="fa-home" iconSize="40" />
-
                </graphic>
             </Button>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data" StackPane.alignment="TOP_CENTER">
