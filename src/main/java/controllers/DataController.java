@@ -40,8 +40,8 @@ public class DataController implements Initializable {
             ObservableList<WaterData> dataList = FXCollections.observableArrayList();
             while (queryOutput.next()) {
                 String datum = queryOutput.getString("datum");
-                float tds = queryOutput.getFloat("tds");
-                float troebelheid = queryOutput.getFloat("troebelheid");
+                int tds = queryOutput.getInt("tds");
+                int troebelheid = queryOutput.getInt("troebelheid");
                 boolean kwaliteit = queryOutput.getBoolean("kwaliteit");
                 dataList.add(new WaterData(datum, tds, troebelheid, kwaliteit));
 

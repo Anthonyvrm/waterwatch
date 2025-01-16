@@ -2,11 +2,11 @@ package controllers;
 
 public class WaterData {
     private String datum;
-    private float TDSdata;
-    private float troebelheid;
+    private int TDSdata;
+    private int troebelheid;
     private boolean kwaliteit;
 
-    public WaterData(String datum, float TDSdata, float troebelheid, boolean kwaliteit) {
+    public WaterData(String datum, int TDSdata, int troebelheid, boolean kwaliteit) {
         this.datum = datum;
         this.TDSdata = TDSdata;
         this.troebelheid = troebelheid;
@@ -25,7 +25,7 @@ public class WaterData {
         return TDSdata;
     }
 
-    public void setTDSdata(float TDSdata) {
+    public void setTDSdata(int TDSdata) {
         this.TDSdata = TDSdata;
     }
 
@@ -33,7 +33,7 @@ public class WaterData {
         return troebelheid;
     }
 
-    public void setTroebelheid(float troebelheid) {
+    public void setTroebelheid(int troebelheid) {
         this.troebelheid = troebelheid;
     }
 
