@@ -43,6 +43,9 @@
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
 
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DataController">
@@ -67,4 +70,14 @@
          </children>
       </StackPane>
    </top>
+   <center>
+      <TableView  fx:id="microbitData" layoutX="35.0" layoutY="20.0" prefHeight="40.0" prefWidth="227.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="Datum" fx:id="datumCol" />
+            <TableColumn prefWidth="75.0" text="TDSdata" fx:id="TDSCol" />
+            <TableColumn prefWidth="75.0" text="Troebelheid" fx:id="troebelheidCol" />
+            <TableColumn prefWidth="75.0" text="Kwaliteit" fx:id="kwaliteitCol" />
+         </columns>
+      </TableView>
+   </center>
 </View>
