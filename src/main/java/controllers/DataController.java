@@ -13,14 +13,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
-import javafx.collections.FXCollections;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class DataController implements Initializable {
     @FXML private TableView<WaterData> microbitData;
     @FXML private TableColumn<WaterData, String> datumCol;
-    @FXML private TableColumn<WaterData, Float> TDSCol;
-    @FXML private TableColumn<WaterData, Float> troebelheidCol;
+    @FXML private TableColumn<WaterData, Integer> TDSCol;
+    @FXML private TableColumn<WaterData, Integer> troebelheidCol;
     @FXML private TableColumn<WaterData, Boolean> kwaliteitCol;
 
     public void goToHome(ActionEvent event) {
@@ -38,6 +37,7 @@ public class DataController implements Initializable {
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(connectQuery);
             ObservableList<WaterData> dataList = FXCollections.observableArrayList();
+            dataList.add(new WaterData("20/92/34", 2597, 931, true));
             while (queryOutput.next()) {
                 String datum = queryOutput.getString("datum");
                 int tds = queryOutput.getInt("tds");
@@ -47,8 +47,8 @@ public class DataController implements Initializable {
 
                 microbitData.setEditable(true);
                 datumCol.setCellValueFactory(new PropertyValueFactory<WaterData, String>("datum"));
-                TDSCol.setCellValueFactory(new PropertyValueFactory<WaterData, Float>("TDSdata"));
-                troebelheidCol.setCellValueFactory(new PropertyValueFactory<WaterData, Float>("troebelheid"));
+                TDSCol.setCellValueFactory(new PropertyValueFactory<WaterData, Integer>("TDSdata"));
+                troebelheidCol.setCellValueFactory(new PropertyValueFactory<WaterData, Integer>("troebelheid"));
                 kwaliteitCol.setCellValueFactory(new PropertyValueFactory<WaterData, Boolean>("kwaliteit"));
                 microbitData.setItems(dataList);
             }

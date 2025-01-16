@@ -21,7 +21,7 @@ public class WaterData {
         this.datum = datum;
     }
 
-    public float getTDSdata() {
+    public int getTDSdata() {
         return TDSdata;
     }
 
@@ -29,7 +29,7 @@ public class WaterData {
         this.TDSdata = TDSdata;
     }
 
-    public float getTroebelheid() {
+    public int getTroebelheid() {
         return troebelheid;
     }
 
