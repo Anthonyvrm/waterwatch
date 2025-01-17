@@ -1,8 +1,7 @@
 import com.fazecast.jSerialComm.SerialPort;
 import controllers.DatabaseConnection; // Import your DatabaseConnection class
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -64,20 +63,20 @@ public class SQLInserter {
                     String formattedDate = dateTime.format(myFormatObj);
                     System.out.println(formattedDate);
                     boolean quality = foundTDS < 4000 && foundTroebel < 4000;
-//                    System.out.println("Read " + numRead + " bytes: " + receivedData +
-//                            " parts: " + foundTDS + ", " + foundTroebel + ", " + formattedDate + ", ");
                     System.out.println("Byte amount: " + numRead + "\nCurrent date and time: " + formattedDate);
                     System.out.println("Found values: " + foundTDS + ", " + foundTDS);
                     System.out.println("Is the water safe? " + quality);
                     // Insert received data into the database
-//                String sql = "INSERT INTO sensor_data (data, timestamp) VALUES (?, NOW())";
-//                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-//                    preparedStatement.setString(1, receivedData);
-//                    preparedStatement.executeUpdate();
-//                    System.out.println("Data inserted into database: " + receivedData);
-//                } catch (Exception e) {
-//                    System.err.println("Failed to insert data: " + e.getMessage());
-//                }
+                   String sql = "INSERT INTO SensorData VALUES ('" + formattedDate + "', " + foundTDS + ", " + foundTroebel + ", " + quality + ");";
+                   System.out.println(sql);
+                    try {
+                        Statement statement = connection.createStatement();
+                        statement.executeUpdate(sql);
+                        System.out.println("Data inserted into database: " + receivedData);
+                    } catch (SQLException e) {
+                        System.err.println("Failed to insert data: " + e.getMessage());
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         }
