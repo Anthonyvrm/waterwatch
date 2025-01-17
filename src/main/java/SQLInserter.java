@@ -3,6 +3,8 @@ import controllers.DatabaseConnection; // Import your DatabaseConnection class
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class SQLInserter {
     public static void main(String[] args) {
@@ -57,9 +59,16 @@ public class SQLInserter {
                     float foundTDS = Float.parseFloat(parts[0]);
                     if(parts[1].equals("-")) parts[1] += "0";
                     float foundTroebel = Float.parseFloat(parts[1]);
-
-                    System.out.println("Read " + numRead + " bytes: " + receivedData + " parts: " + foundTDS + ", " + foundTroebel);
-
+                    LocalDateTime dateTime = LocalDateTime.now();
+                    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                    String formattedDate = dateTime.format(myFormatObj);
+                    System.out.println(formattedDate);
+                    boolean quality = foundTDS < 4000 && foundTroebel < 4000;
+//                    System.out.println("Read " + numRead + " bytes: " + receivedData +
+//                            " parts: " + foundTDS + ", " + foundTroebel + ", " + formattedDate + ", ");
+                    System.out.println("Byte amount: " + numRead + "\nCurrent date and time: " + formattedDate);
+                    System.out.println("Found values: " + foundTDS + ", " + foundTDS);
+                    System.out.println("Is the water safe? " + quality);
                     // Insert received data into the database
 //                String sql = "INSERT INTO sensor_data (data, timestamp) VALUES (?, NOW())";
 //                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
