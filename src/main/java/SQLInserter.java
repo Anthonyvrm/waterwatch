@@ -55,6 +55,7 @@ public class SQLInserter {
                     receivedData = lines[lines.length -1];
                     String[] parts = receivedData.split(", ");
                     float foundTDS = Float.parseFloat(parts[0]);
+                    if(parts[1].equals("-")) parts[1] += "0";
                     float foundTroebel = Float.parseFloat(parts[1]);
 
                     System.out.println("Read " + numRead + " bytes: " + receivedData + " parts: " + foundTDS + ", " + foundTroebel);

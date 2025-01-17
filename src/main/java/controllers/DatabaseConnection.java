@@ -1,3 +1,4 @@
+
 package controllers;
 
 import java.sql.Connection;
@@ -6,8 +7,10 @@ import java.sql.DriverManager;
 public class DatabaseConnection {
     public Connection databaseLink;
 
+    public DatabaseConnection() {
+    }
+
     public Connection getConnection() {
-        // Deze gegevens moeten aangepast worden gebaseerd op de inloggegevens van jouw SQL workbench
         String databaseName = "waterwatch";
         String databaseUser = "root";
         String databasePassword = "Qwerty";
@@ -15,11 +18,13 @@ public class DatabaseConnection {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            databaseLink = DriverManager.getConnection(url, databaseUser, databasePassword);
-        } catch (Exception e) {
+            this.databaseLink = DriverManager.getConnection(url, databaseUser, databasePassword);
+        } catch (Exception var6) {
+            Exception e = var6;
             System.out.println("WRONG");
             throw new RuntimeException(e);
         }
-        return databaseLink;
+
+        return this.databaseLink;
     }
 }
