@@ -42,7 +42,6 @@ public class DataController implements Initializable {
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(connectQuery);
             ObservableList<WaterData> dataList = FXCollections.observableArrayList();
-            dataList.add(new WaterData("20/92/34", 2597, 931, true));
 
             while(queryOutput.next()) {
                 String datum = queryOutput.getString("datum");

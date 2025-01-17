@@ -11,6 +11,7 @@ public class DatabaseConnection {
     }
 
     public Connection getConnection() {
+        //Dit moet worden vervangen met de gegevens uit jouw locale sql database.
         String databaseName = "waterwatch";
         String databaseUser = "root";
         String databasePassword = "Qwerty";
