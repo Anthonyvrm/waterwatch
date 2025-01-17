@@ -63,16 +63,16 @@ public class SQLInserter {
                     String formattedDate = dateTime.format(myFormatObj);
                     System.out.println(formattedDate);
                     boolean quality = foundTDS < 4000 && foundTroebel < 4000;
-                    System.out.println("Byte amount: " + numRead + "\nCurrent date and time: " + formattedDate);
-                    System.out.println("Found values: " + foundTDS + ", " + foundTDS);
-                    System.out.println("Is the water safe? " + quality);
+//                    System.out.println("Byte amount: " + numRead + "\nCurrent date and time: " + formattedDate);
+//                    System.out.println("Found values: " + foundTDS + ", " + foundTDS);
+//                    System.out.println("Is the water safe? " + quality);
                     // Insert received data into the database
                    String sql = "INSERT INTO SensorData VALUES ('" + formattedDate + "', " + foundTDS + ", " + foundTroebel + ", " + quality + ");";
-                   System.out.println(sql);
+//                   System.out.println(sql);
                     try {
                         Statement statement = connection.createStatement();
                         statement.executeUpdate(sql);
-                        System.out.println("Data inserted into database: " + receivedData);
+                        System.out.println("Data inserted into database: " + sql);
                     } catch (SQLException e) {
                         System.err.println("Failed to insert data: " + e.getMessage());
                         throw new RuntimeException(e);

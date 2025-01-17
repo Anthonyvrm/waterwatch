@@ -73,7 +73,7 @@
    <center>
       <TableView  fx:id="microbitData" layoutX="35.0" layoutY="20.0" prefHeight="40.0" prefWidth="227.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Datum" fx:id="datumCol" />
+            <TableColumn prefWidth="115.0" text="Datum" fx:id="datumCol" />
             <TableColumn prefWidth="75.0" text="TDSdata" fx:id="TDSCol" />
             <TableColumn prefWidth="75.0" text="Troebelheid" fx:id="troebelheidCol" />
             <TableColumn prefWidth="75.0" text="Kwaliteit" fx:id="kwaliteitCol" />
