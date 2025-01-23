@@ -76,7 +76,7 @@
             <TableColumn prefWidth="115.0" text="Datum" fx:id="datumCol" />
             <TableColumn prefWidth="75.0" text="TDSdata" fx:id="TDSCol" />
             <TableColumn prefWidth="75.0" text="Troebelheid" fx:id="troebelheidCol" />
-            <TableColumn prefWidth="75.0" text="Kwaliteit" fx:id="kwaliteitCol" />
+            <TableColumn prefWidth="75.0" text="Schoon" fx:id="kwaliteitCol" />
          </columns>
       </TableView>
    </center>
