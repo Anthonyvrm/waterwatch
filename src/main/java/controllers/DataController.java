@@ -36,8 +36,10 @@ public class DataController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String connectQuery = "Select * From SensorData";
-
+        String connectQuery = "Select date_format(datum, '%H:00 %d-%m-%Y') as Datum, AVG(tds) as TDS, AVG(troebelheid) as Troebelheid " +
+                "FROM SensorData " +
+                "Group by hour(datum);";
+        //probleem: als het een keer false tegen is gekomen dan zal het altijd false blijven
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(connectQuery);
@@ -47,7 +49,7 @@ public class DataController implements Initializable {
                 String datum = queryOutput.getString("datum");
                 float tds = queryOutput.getInt("tds");
                 float troebelheid = queryOutput.getInt("troebelheid");
-                boolean kwaliteit = queryOutput.getBoolean("kwaliteit");
+                boolean kwaliteit = tds < 4000 && troebelheid < 700;
                 dataList.add(new WaterData(datum, tds, troebelheid, kwaliteit));
                 this.microbitData.setEditable(true);
                 this.datumCol.setCellValueFactory(new PropertyValueFactory("datum"));
