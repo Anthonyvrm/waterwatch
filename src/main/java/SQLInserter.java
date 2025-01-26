@@ -38,7 +38,7 @@ public class SQLInserter {
         StringBuilder buffer = new StringBuilder();
         // Step 3: Read from Serial Port and Insert into Database
         while (true) {
-            if (comPort.bytesAvailable() > 14) {
+            if (comPort.bytesAvailable() > 12) {
                 byte[] readBuffer = new byte[comPort.bytesAvailable()];
                 int numRead = comPort.readBytes(readBuffer, readBuffer.length);
                 String receivedData = new String(readBuffer).trim(); // Convert byte array to string
@@ -54,15 +54,16 @@ public class SQLInserter {
 
                     String[] lines = receivedData.split("\n");
                     receivedData = lines[lines.length -1];
+                    System.out.println(receivedData);
                     String[] parts = receivedData.split(", ");
                     float foundTDS = Float.parseFloat(parts[0]);
                     if(parts[1].equals("-")) parts[1] += "0";
                     float foundTroebel = Float.parseFloat(parts[1]);
                     LocalDateTime dateTime = LocalDateTime.now();
-                    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("YYYY-MM-dd HH.mm.ss");
                     String formattedDate = dateTime.format(myFormatObj);
                     System.out.println(formattedDate);
-                    boolean quality = foundTDS < 4000 && foundTroebel < 4000;
+                    boolean quality = foundTDS < 4000 && foundTroebel < 700;
 //                    System.out.println("Byte amount: " + numRead + "\nCurrent date and time: " + formattedDate);
 //                    System.out.println("Found values: " + foundTDS + ", " + foundTDS);
 //                    System.out.println("Is the water safe? " + quality);
