@@ -15,6 +15,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("WaterWatch Application");
         primaryStage.show();
+//        SQLInserter.begin();
         // dit is eigenlijk hoe we nu de scenes switchen maar dan ff in 1 regel door de scenecontroller
     }
 

@@ -1,12 +1,13 @@
 import com.fazecast.jSerialComm.SerialPort;
+import controllers.AccountInfo;
 import controllers.DatabaseConnection; // Import your DatabaseConnection class
 
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class SQLInserter {
-    public static void main(String[] args) {
+public class SQLInserter extends Main{
+    public static void begin() {
         // Step 1: Open Serial Port
         SerialPort comPort = SerialPort.getCommPort("COM4"); // Replace with your port name
         comPort.setBaudRate(115200);
@@ -59,6 +60,8 @@ public class SQLInserter {
                     float foundTDS = Float.parseFloat(parts[0]);
                     if(parts[1].equals("-")) parts[1] += "0";
                     float foundTroebel = Float.parseFloat(parts[1]);
+                    int user = AccountInfo.getCurrentUser();
+                    user = 2;
                     LocalDateTime dateTime = LocalDateTime.now();
                     DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("YYYY-MM-dd HH.mm.ss");
                     String formattedDate = dateTime.format(myFormatObj);
@@ -68,7 +71,8 @@ public class SQLInserter {
 //                    System.out.println("Found values: " + foundTDS + ", " + foundTDS);
 //                    System.out.println("Is the water safe? " + quality);
                     // Insert received data into the database
-                   String sql = "INSERT INTO SensorData VALUES ('" + formattedDate + "', " + foundTDS + ", " + foundTroebel + ", " + quality + ");";
+                   String sql = "INSERT INTO SensorData (datum, tds, troebelheid, kwaliteit, gebruiker) VALUES ('" +
+                           formattedDate + "', " + foundTDS + ", " + foundTroebel + ", " + quality + ", " + user + ") ;";
 //                   System.out.println(sql);
                     try {
                         Statement statement = connection.createStatement();
