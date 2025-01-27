@@ -36,7 +36,8 @@ public class LoginController {
             ResultSet queryOutput = statement.executeQuery(sql);
 
             if(queryOutput.next()) {
-                System.out.println(queryOutput.getString("gebruikersnaam"));
+                AccountInfo.setCurrentUser(queryOutput.getInt("Ac_id"));
+                AccountInfo.setCurrentUsername(queryOutput.getString("gebruikersnaam"));
                 if(queryOutput.next()){
                     showAlert(Alert.AlertType.ERROR, "Validation Error", "Er zijn meerdere accounts met die naam");
                     return;

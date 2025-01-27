@@ -81,7 +81,7 @@
                   <Insets />
                </StackPane.margin>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Uw Account">
+            <Text fx:id="Accountname" strokeType="OUTSIDE" strokeWidth="0.0" text="">
                <StackPane.margin>
                   <Insets bottom="550.0" />
                </StackPane.margin>
