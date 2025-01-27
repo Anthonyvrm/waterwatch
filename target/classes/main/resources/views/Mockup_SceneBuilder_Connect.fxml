@@ -71,12 +71,12 @@
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Start koppeling">
+            <Button fx:id="loginButton" onAction="#goToLogin" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Login">
                <StackPane.margin>
                   <Insets top="200.0" />
                </StackPane.margin>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;" text="Status:">
+            <Button fx:id="registerButton" onAction="#goToRegister" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;" text="Registreer">
                <StackPane.margin>
                   <Insets />
                </StackPane.margin>
@@ -89,7 +89,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="73.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zorg ervoor dat je de Micro:Bit aan doet.">
+            <Text layoutX="73.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zorg ervoor dat je een account maakt.">
                <font>
                   <Font size="18.0" />
                </font>
@@ -113,7 +113,7 @@
                   <Insets bottom="240.0" />
                </StackPane.margin>
             </Text>
-            <Text layoutX="16.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Druk op &quot;Start koppeling&quot;.">
+            <Text layoutX="16.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login! zo makkelijke is het">
                <font>
                   <Font size="18.0" />
                </font>
