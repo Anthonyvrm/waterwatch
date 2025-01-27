@@ -39,7 +39,7 @@ public class DataController implements Initializable {
         String connectQuery = "Select date_format(datum, '%H:00 %d-%m-%Y') as Datum, AVG(tds) as TDS, AVG(troebelheid) as Troebelheid " +
                 "FROM SensorData " +
                 "Group by hour(datum);";
-        //probleem: als het een keer false tegen is gekomen dan zal het altijd false blijven
+        //(opgelost) probleem: als het een keer false tegen is gekomen dan zal het altijd false blijven
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(connectQuery);

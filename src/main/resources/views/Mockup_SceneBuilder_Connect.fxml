@@ -57,7 +57,7 @@
                   <FontIcon iconLiteral="fa-home" iconSize="40" />
                </graphic>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hoe verbind je?" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="11.0" />
                </StackPane.margin>
@@ -76,12 +76,12 @@
                   <Insets top="200.0" />
                </StackPane.margin>
             </Button>
-            <Button fx:id="registerButton" onAction="#goToRegister" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;" text="Registreer">
+            <Button fx:id="registerButton" onAction="#goToRegister" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: dodgerblue;" text="Registreer">
                <StackPane.margin>
                   <Insets />
                </StackPane.margin>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Verbind jouw Micro:Bit">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Uw Account">
                <StackPane.margin>
                   <Insets bottom="550.0" />
                </StackPane.margin>
@@ -89,7 +89,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="73.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zorg ervoor dat je een account maakt.">
+            <Text layoutX="73.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="uw metingen altijd zien.">
                <font>
                   <Font size="18.0" />
                </font>
@@ -97,7 +97,7 @@
                   <Insets bottom="350.0" />
                </StackPane.margin>
             </Text>
-            <Text layoutX="73.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stap 1">
+            <Text layoutX="73.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Met een WaterWatch account kunt u">
                <font>
                   <Font size="18.0" />
                </font>
@@ -105,7 +105,7 @@
                   <Insets bottom="410.0" />
                </StackPane.margin>
             </Text>
-            <Text layoutX="144.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stap 2">
+            <Text layoutX="144.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nadat u bent ingelogd zijn de">
                <font>
                   <Font size="18.0" />
                </font>
@@ -113,7 +113,7 @@
                   <Insets bottom="240.0" />
                </StackPane.margin>
             </Text>
-            <Text layoutX="16.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login! zo makkelijke is het">
+            <Text layoutX="16.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="metingen te vinden onder 'Uw metingen'.">
                <font>
                   <Font size="18.0" />
                </font>
