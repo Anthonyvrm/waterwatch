@@ -71,6 +71,15 @@
       </StackPane>
    </top>
    <center>
+      <StackPane>
+      <Text fx:id="loginWarning"  strokeType="OUTSIDE" strokeWidth="0.0" text="Log in om uw data te zien">
+         <StackPane.margin>
+            <Insets top="-170.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
       <TableView  fx:id="microbitData" layoutX="35.0" layoutY="20.0" prefHeight="40.0" prefWidth="227.0">
          <columns>
             <TableColumn prefWidth="115.0" text="Datum" fx:id="datumCol" />
@@ -79,5 +88,6 @@
             <TableColumn prefWidth="75.0" text="Schoon" fx:id="kwaliteitCol" />
          </columns>
       </TableView>
+      </StackPane>
    </center>
 </View>

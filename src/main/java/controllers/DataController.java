@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 public class DataController implements Initializable {
     @FXML
@@ -25,6 +26,8 @@ public class DataController implements Initializable {
     private TableColumn<WaterData, Float> troebelheidCol;
     @FXML
     private TableColumn<WaterData, Boolean> kwaliteitCol;
+    @FXML
+    private Text loginWarning;
 
     public DataController() {
     }
@@ -36,14 +39,21 @@ public class DataController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
+        if (AccountInfo.getCurrentUser() == -1) {
+           microbitData.setVisible(false);
+//           loginWarning.setVisible(true);
+           return;
+        }
         String connectQuery = "Select date_format(datum, '%H:00 %d-%m-%Y') as Datum, AVG(tds) as TDS, AVG(troebelheid) as Troebelheid " +
-                "FROM SensorData " +
+                "FROM SensorData " + "WHERE gebruiker = '" + AccountInfo.getCurrentUser() + "'" +
                 "Group by hour(datum);";
         //(opgelost) probleem: als het een keer false tegen is gekomen dan zal het altijd false blijven
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(connectQuery);
             ObservableList<WaterData> dataList = FXCollections.observableArrayList();
+            microbitData.setVisible(true);
+//            loginWarning.setVisible(false);
 
             while(queryOutput.next()) {
                 String datum = queryOutput.getString("datum");
