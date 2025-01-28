@@ -38,6 +38,7 @@ public class LoginController {
             if(queryOutput.next()) {
                 AccountInfo.setCurrentUser(queryOutput.getInt("Ac_id"));
                 AccountInfo.setCurrentUsername(queryOutput.getString("gebruikersnaam"));
+                AccountInfo.setCurrentArea(queryOutput.getString("gemeente"));
                 if(queryOutput.next()){
                     showAlert(Alert.AlertType.ERROR, "Validation Error", "Er zijn meerdere accounts met die naam");
                     return;

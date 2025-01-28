@@ -41,7 +41,6 @@ public class DataController implements Initializable {
         Connection connectDB = connectNow.getConnection();
         if (AccountInfo.getCurrentUser() == -1) {
            microbitData.setVisible(false);
-//           loginWarning.setVisible(true);
            return;
         }
         String connectQuery = "Select date_format(datum, '%H:00 %d-%m-%Y') as Datum, AVG(tds) as TDS, AVG(troebelheid) as Troebelheid " +
@@ -59,7 +58,7 @@ public class DataController implements Initializable {
                 String datum = queryOutput.getString("datum");
                 float tds = queryOutput.getInt("tds");
                 float troebelheid = queryOutput.getInt("troebelheid");
-                boolean kwaliteit = tds < 4000 && troebelheid < 700;
+                boolean kwaliteit = tds < 1100 && troebelheid <= 750;
                 dataList.add(new WaterData(datum, tds, troebelheid, kwaliteit));
                 this.microbitData.setEditable(true);
                 this.datumCol.setCellValueFactory(new PropertyValueFactory("datum"));
