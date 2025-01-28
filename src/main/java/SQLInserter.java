@@ -7,6 +7,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class SQLInserter extends Main{
+    private static boolean running = true;
+
+    public static boolean isRunning() {
+        return running;
+    }
+
+    public static void setRunning(boolean running) {
+        SQLInserter.running = running;
+    }
+
     public static void begin() {
         // Step 1: Open Serial Port
         SerialPort comPort = SerialPort.getCommPort("COM4"); // Replace with your port name
@@ -32,13 +42,14 @@ public class SQLInserter extends Main{
         Connection connection = dbConnection.getConnection();
         if (connection != null) {
             System.out.println("Connected to database.");
+            System.out.println(AccountInfo.getCurrentUser());
         } else {
             System.err.println("Failed to connect to the database.");
             return;
         }
         StringBuilder buffer = new StringBuilder();
         // Step 3: Read from Serial Port and Insert into Database
-        while (true) {
+        while (running) {
             if (comPort.bytesAvailable() > 12) {
                 byte[] readBuffer = new byte[comPort.bytesAvailable()];
                 int numRead = comPort.readBytes(readBuffer, readBuffer.length);
@@ -61,12 +72,12 @@ public class SQLInserter extends Main{
                     if(parts[1].equals("-")) parts[1] += "0";
                     float foundTroebel = Float.parseFloat(parts[1]);
                     int user = AccountInfo.getCurrentUser();
-                    user = 2;
+                    if (user <= -1) break;
                     LocalDateTime dateTime = LocalDateTime.now();
                     DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("YYYY-MM-dd HH.mm.ss");
                     String formattedDate = dateTime.format(myFormatObj);
                     System.out.println(formattedDate);
-                    boolean quality = foundTDS < 4000 && foundTroebel < 700;
+                    boolean quality = foundTDS < 1100 && foundTroebel <= 750;
 //                    System.out.println("Byte amount: " + numRead + "\nCurrent date and time: " + formattedDate);
 //                    System.out.println("Found values: " + foundTDS + ", " + foundTDS);
 //                    System.out.println("Is the water safe? " + quality);
