@@ -49,6 +49,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.text.TextFlow?>
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MapController">
    <top>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -59,7 +60,7 @@
                    <FontIcon iconLiteral="fa-home" iconSize="40" />
                </graphic>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaart" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Omgevingsoverzicht" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="11.0" />
                </StackPane.margin>
@@ -83,7 +84,16 @@
    </top>
     <center>
         <StackPane>
-
+<!--            <TextFlow maxWidth="280">-->
+<!--                <StackPane.margin>-->
+<!--                    <Insets top="-80" />-->
+<!--                </StackPane.margin>-->
+<!--                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hier ziet u een overzicht van de metingen bij u in de buurt. U kunt hierbij kijken naar uw gemeente of postcode." StackPane.alignment="TOP_CENTER">-->
+<!--                    <font>-->
+<!--                        <Font size="15.0" />-->
+<!--                    </font>-->
+<!--                </Text>-->
+<!--            </TextFlow>-->
             <Text fx:id="loginWarning"  strokeType="OUTSIDE" strokeWidth="0.0" text="Log in om de data in uw gebied te zien">
                 <StackPane.margin>
                     <Insets top="-170.0" />

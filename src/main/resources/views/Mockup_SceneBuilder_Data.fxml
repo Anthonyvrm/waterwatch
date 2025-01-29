@@ -48,6 +48,7 @@
 <?import javafx.scene.control.*?>
 
 
+<?import javafx.scene.text.TextFlow?>
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DataController">
    <top>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -72,6 +73,16 @@
    </top>
    <center>
       <StackPane>
+         <TextFlow maxWidth="280">
+            <StackPane.margin>
+               <Insets top="-80" />
+            </StackPane.margin>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hier ziet u een overzicht al uw metingen." StackPane.alignment="TOP_CENTER">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         </TextFlow>
       <Text fx:id="loginWarning"  strokeType="OUTSIDE" strokeWidth="0.0" text="Log in om uw data te zien">
          <StackPane.margin>
             <Insets top="-170.0" />

@@ -29,7 +29,7 @@ public class ConnectController implements Initializable {
             Accountname.setText("U bent nog niet ingelogd");
         }
         else {
-            Accountname.setText(AccountInfo.getCurrentUsername());
+            Accountname.setText("U bent ingelogd als: " + AccountInfo.getCurrentUsername());
             loginButton.setText("Verander account");
         }
 

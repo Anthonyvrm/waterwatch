@@ -68,7 +68,7 @@
                   <FontIcon iconLiteral="fa-home" iconSize="40" />
                </graphic>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="registreren" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registreren" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="11.0" />
                </StackPane.margin>

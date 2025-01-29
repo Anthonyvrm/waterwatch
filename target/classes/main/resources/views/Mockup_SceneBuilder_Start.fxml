@@ -55,7 +55,7 @@
 <!--                  <Icon content="CALL" prefHeight="150.0" prefWidth="193.0" style="-fx-border-color: black; -fx-border-width: 0px; " />-->
                </graphic>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="START" StackPane.alignment="TOP_CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="11.0" />
                </StackPane.margin>
