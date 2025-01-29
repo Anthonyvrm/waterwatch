@@ -46,6 +46,9 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ComboBox?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MapController">
    <top>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -65,10 +68,22 @@
                </font>
             </Text>
          </children>
+          <ComboBox fx:id="dataSelector"  promptText="Data weergave">
+              <StackPane.margin>
+                  <Insets top ="100" left="-205"/>
+              </StackPane.margin>
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Gemeente"></String>
+                      <String fx:value="Postcode"></String>
+                  </FXCollections>
+              </items>
+          </ComboBox>
       </StackPane>
    </top>
     <center>
         <StackPane>
+
             <Text fx:id="loginWarning"  strokeType="OUTSIDE" strokeWidth="0.0" text="Log in om de data in uw gebied te zien">
                 <StackPane.margin>
                     <Insets top="-170.0" />

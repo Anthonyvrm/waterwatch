@@ -3,7 +3,7 @@ package controllers;
 public class AccountInfo {
     private static int currentUser = -1;
     private static String currentUsername = "";
-    private static String currentArea = "";
+    private static int currentArea = -1;
 
     public static int getCurrentUser() {
         return currentUser;
@@ -21,11 +21,11 @@ public class AccountInfo {
         AccountInfo.currentUsername = currentUsername;
     }
 
-    public static String getCurrentArea() {
+    public static int getCurrentArea() {
         return currentArea;
     }
 
-    public static void setCurrentArea(String currentArea) {
+    public static void setCurrentArea(int currentArea) {
         AccountInfo.currentArea = currentArea;
     }
 }

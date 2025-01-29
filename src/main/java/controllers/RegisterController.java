@@ -16,6 +16,8 @@ public class RegisterController {
     private TextField wachtwoordField;
     @FXML
     private TextField gemeenteField;
+    @FXML
+    private TextField postcodeField;
 
     public void goToHome(ActionEvent event) {
         SceneController.goToHome();
@@ -26,7 +28,8 @@ public class RegisterController {
         String gebruiker = gebruikersnaamField.getText().trim();
         String wachtwoord = wachtwoordField.getText().trim();
         String gemeente = gemeenteField.getText().trim().toUpperCase();
-        if (gebruiker.isEmpty() || wachtwoord.isEmpty() || gemeente.isEmpty()) {
+        String postcode = postcodeField.getText().trim().toUpperCase();
+        if (gebruiker.isEmpty() || wachtwoord.isEmpty() || gemeente.isEmpty() || postcode.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Validation Error", "Vul alle velden in.");
             return;
         }
@@ -45,8 +48,36 @@ public class RegisterController {
             Exception e = var13;
             e.printStackTrace();
         }
+//        String checkLocatie = "SELECT * FROM Locatie WHERE gemeente = '" + gemeente + "' AND postcode = '" + postcode + "');";
+        int gemeenteID = checkGemeente(gemeente, postcode, connectDB);
+//        try {
+//            Statement statement = connectDB.createStatement();
+//            ResultSet queryOutput = statement.executeQuery(checkLocatie);
+//
+//            if (queryOutput.next()) {
+//               gemeenteID = queryOutput.getInt("gemeente");
+//            }
+//        }
+//        catch (Exception var13) {
+//            showAlert(Alert.AlertType.ERROR, "Validation Error", "Er is iets fout gegaan");
+//            Exception e = var13;
+//            e.printStackTrace();
+//        }
+        if (gemeenteID <= -1) {
+            String makeLoc = "INSERT INTO Locatie (gemeente, postcode) VALUES('" + gemeente + "', '" + postcode + "');";
+            try {
+                Statement statement = connectDB.createStatement();
+                statement.executeUpdate(makeLoc);
+                gemeenteID = checkGemeente(gemeente, postcode, connectDB);
+            }
+            catch (SQLException e) {
+                System.err.println("Failed to insert data: " + e.getMessage());
+                showAlert(Alert.AlertType.ERROR, "Registration Failed", "Er is iets fout gegaan, probeer het opnieuw");
+                throw new RuntimeException(e);
+            }
+        }
         String sql = "INSERT INTO Account  (gebruikersnaam, wachtwoord, gemeente) " +
-                "VALUES('" + gebruiker + "', '" + wachtwoord + "', '" + gemeente + "');";
+                "VALUES('" + gebruiker + "', '" + wachtwoord + "', '" + gemeenteID + "');";
         try {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(sql);
@@ -65,5 +96,23 @@ public class RegisterController {
         alert.setHeaderText(null);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+    private int checkGemeente(String gemeente, String postcode, Connection connectDB) {
+        int found = -1;
+        String checkLocatie = "SELECT * FROM Locatie WHERE gemeente = '" + gemeente + "' AND postcode = '" + postcode + "';";
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryOutput = statement.executeQuery(checkLocatie);
+
+            if (queryOutput.next()) {
+                found = queryOutput.getInt("Lo_id");
+            }
+        }
+        catch (Exception var13) {
+            showAlert(Alert.AlertType.ERROR, "Validation Error", "Er is iets fout gegaan");
+            Exception e = var13;
+            e.printStackTrace();
+        }
+        return found;
     }
 }
